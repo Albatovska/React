@@ -11,7 +11,6 @@ class BestSales extends Component {
 		this.props.fetchBestSales();
 	}
 	render() {
-		console.log(this.props);
 		const {
 			bestSales: { data, loading },
 		} = this.props;

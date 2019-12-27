@@ -35,8 +35,13 @@ export const createCurrentDevice = payload => {
 
 export const openLoginModal = () => {
     return {
-        type: 'OPEN_LOGIN_MODAL',
-    };
+        type: "OPEN_LOGIN_MODAL",
+    }
+};
+export const openRegistrationModal = () => {
+    return {
+        type: "OPEN_REGISTRATION_MODAL"
+    }
 };
 
 export const closeModal = () => {

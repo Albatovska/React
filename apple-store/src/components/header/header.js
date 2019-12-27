@@ -1,19 +1,21 @@
 import React from 'react'
 import './header.sass'
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from './logo.png'
-import {openLoginModal} from "../../actions";
+//import { openModal } from "../../actions";
 import withService from "../hoc/with-service";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
+import { openLoginModal } from "../../actions";
+import { openRegistrationModal } from "../../actions";
 
-const Header = ({openLoginModal, user, cart}) => {
+const Header = ({ openRegistrationModal, openLoginModal, user, cart }) => {
     const { sum, count } = cart;
 
-    return(
+    return (
         <div className={"header"}>
             <div className="container">
-                <NavLink to = "/" className="logo">
-                    <img src={logo} alt=""/>
+                <NavLink to="/" className="logo">
+                    <img src={logo} alt="" />
                 </NavLink>
                 <nav>
                     <NavLink to={"/catalog/837382"} className="item">Iphone</NavLink>
@@ -23,17 +25,25 @@ const Header = ({openLoginModal, user, cart}) => {
                     <NavLink to={"/catalog/333"} className="item">Accessories</NavLink>
                     <NavLink to={"/catalog/444"} className="item">Apple Watch</NavLink>
                 </nav>
+
                 {
-                    user?
+                    user ?
                         <div className="login" >Hello, {user.first_name}</div>
                         :
-                        <div className="login" onClick={openLoginModal}>
-                            Sign In
-                            <i className="fas fa-sign-in-alt"></i>
+                        <div className={"ingoing"}>
+                            <div className={"login"} onClick={openLoginModal}>Login</div>
+                        </div>
+                }
+                {
+                    user ?
+                        ""
+                        :
+                        <div className="regis" onClick={openRegistrationModal}>
+                            Registration
                         </div>
                 }
 
-                <NavLink to = {"/shopping-cart"} className="cart-item">
+                <NavLink to={"/shopping-cart"} className="cart-item">
                     <div className="sum">{sum}$</div>
                     <i className="fas fa-shopping-cart"></i>
                     <div className="count">{count}</div>
@@ -43,19 +53,20 @@ const Header = ({openLoginModal, user, cart}) => {
     )
 };
 
-const mapStateToProps = ({user, cart}) => {
-    return {user, cart}
+const mapStateToProps = ({ user, cart }) => {
+    return { user, cart }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        openRegistrationModal: () => dispatch(openRegistrationModal()),
         openLoginModal: () => dispatch(openLoginModal())
     }
 };
 
 export default (
-        withService(
-            connect(mapStateToProps, mapDispatchToProps)(Header)
-        )
+    withService(
+        connect(mapStateToProps, mapDispatchToProps)(Header)
+    )
 )
 

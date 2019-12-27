@@ -7,7 +7,6 @@ import { makeResult } from './make-result';
 import { BestSales } from './best-sales';
 
 const reducer = (state, action) => {
-    console.log('MAIN STATE', state);
     return {
         user: updateUser(state, action),
         catalog: changeCatalogState(state, action),

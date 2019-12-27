@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../best-sales';
+import '../best-sales.sass';
 
 const BestSalesCatalog = ({ data }) => {
-	console.log({ data });
 	return (
 		<div className="catalog">
 			{data.map(el => {
@@ -13,8 +12,8 @@ const BestSalesCatalog = ({ data }) => {
 							<img src={el.img} alt="Item" />
 						</div>
 						<div className="model">{el.model}</div>
-						<span className="price">
-							Price: {el.price}$<span className="price stock-price">Price: {el.stockPrice}$</span>
+						<span className="best-price">
+							Price: {el.price}$<span className="best-price stock-price">Price: {el.stoсkPrice}$</span>
 						</span>
 					</Link>
 				);

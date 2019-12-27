@@ -1,10 +1,11 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import "./../modals.sass"
+import { Redirect } from "react-router-dom";
 import withService from "../../hoc/with-service";
-import {updateUser} from "../../../actions";
-import {connect} from "react-redux";
+import { updateUser } from "../../../actions";
+import { connect } from "react-redux";
 
-class LogInModal extends Component{
+class LogInModal extends Component {
 
     state = {
         email: "",
@@ -13,15 +14,15 @@ class LogInModal extends Component{
 
     onSubmit = (e) => {
         e.preventDefault();
-        const {email, password, success} = this.state;
-        if(success) return;
+        const { email, password, success } = this.state;
+        if (success) return;
 
         this.props.service.logIn(email, password)
             .then((data) => {
-                if(data.status === -1){
-                    this.setState({error: data.error})
+                if (data.status === -1) {
+                    this.setState({ error: data.error })
                 }
-                if(data.status === 0){
+                if (data.status === 0) {
                     this.setState({
                         error: false,
                         success: true
@@ -32,15 +33,16 @@ class LogInModal extends Component{
     };
 
     onChange = (e) => {
-        const {name, value} = e.target;
-        this.setState({[name]:value})
+        const { name, value } = e.target;
+        this.setState({ [name]: value })
     };
 
     render() {
-        const {close, user} = this.props;
-        const {email, password, error, success } = this.state;
+        const { close } = this.props;
+        const { email, password, error, success } = this.state;
+        if (success) return <Redirect to={"/"} />;
 
-        return(
+        return (
             <div className={"modal-overflow"} onClick={close}>
                 <form className="modal" onSubmit={this.onSubmit} onClick={(e) => e.stopPropagation()}>
                     <div className="modal-header">
@@ -55,7 +57,7 @@ class LogInModal extends Component{
                             value={email}
                             name={"email"}
                             onChange={this.onChange}
-                            placeholder={"Email(login)..."}/>
+                            placeholder={"Email(login)..."} />
                         <input
                             className={"input"}
                             type="password"
@@ -63,17 +65,17 @@ class LogInModal extends Component{
                             value={password}
                             name={"password"}
                             onChange={this.onChange}
-                            placeholder={"Password..."}/>
+                            placeholder={"Password..."} />
                     </div>
                     <div className="modal-error">
                         {
-                            error? error : ""
+                            error ? error : ""
                         }
                     </div>
 
                     <div className="modal-success">
                         {
-                            success? "Success login" : ""
+                            success ? "Success login" : ""
                         }
                     </div>
                     <div className="modal-footer">
@@ -88,8 +90,8 @@ class LogInModal extends Component{
     }
 }
 
-const mapStateToProps = ({user}) => {
-    return {user}
+const mapStateToProps = ({ user }) => {
+    return { user }
 };
 
 const mapDispatchToProps = (dispatch) => {

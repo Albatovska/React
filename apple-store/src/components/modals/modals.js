@@ -1,20 +1,22 @@
-import React from 'react'
+import React from 'react';
+import { connect } from "react-redux";
 import LogInModal from "./log-in-modal/log-in-modal";
-import {connect} from "react-redux";
-import {closeModal} from "../../actions";
+import RegistrationModal from './registration-modal/registration-modal';
+import { closeModal } from "../../actions";
 
-const Modals = ({modals, close}) => {
+const Modals = ({ modals, close }) => {
+   
+    const { loginModal, registrationModal } = modals;
 
-    const { loginModal } = modals;
-
-    if(loginModal) return <LogInModal close={close}/>;
+    if (loginModal) return <LogInModal close={close} />;
+    if (registrationModal) return <RegistrationModal close={close} />;
 
     return ""
 
 };
 
-const mapStateToProps = ({modals}) => {
-    return {modals}
+const mapStateToProps = ({ modals }) => {
+    return { modals }
 };
 
 const mapDispatchToProps = (dispatch) => {

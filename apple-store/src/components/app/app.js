@@ -5,7 +5,7 @@ import CatalogPage from "../pages/catalog-page/catalog-page";
 import HomePage from "../pages/home-page/home-page";
 import Header from "../header/header";
 import CartItemPage from "../pages/card-item-page/card-item-page";
-import Modals from "../modals/modals"
+import Modals from "../modals/modals";
 import ShopCartPage from "../pages/shop-cart-page/shop-cart-page";
 
 const App = () => {
