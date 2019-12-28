@@ -1,0 +1,15 @@
+.slider {
+    width: 100vw;
+    height: 100vh;
+    filter: grayscale(.5);
+    position: relative;
+}
+
+.image-random {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(.5);
+    position: relative;
+    max-width: 100%;
+}

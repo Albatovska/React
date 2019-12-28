@@ -1,0 +1,17 @@
+.user-card {
+    padding-top: 80px;
+    color: #ffffff;
+}
+
+.user-image {
+    position: absolute;
+    display: block;
+    right: 250px;
+    width: 338px;
+    height: 338px;
+}
+
+.user-card-info {
+    padding-top: 80px;
+    padding-left: 150px;
+}

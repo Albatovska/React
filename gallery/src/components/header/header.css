@@ -1,0 +1,57 @@
+.header {
+    position: fixed;
+    height: 80px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.logo img {
+    color: #ffffff;
+}
+
+.logo:hover {
+    opacity: 1;
+}
+
+.logo img {
+    width: 60%;
+    max-height: 30%;
+}
+
+.item {
+    padding: 5px;
+    margin: 0px 30px;
+    text-transform: uppercase;
+    opacity: .7;
+    cursor: pointer;
+    color: white;
+}
+
+.menu {
+    color: #0000;
+}
+
+.active {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.item:hover {
+    opacity: 1;
+    text-decoration: underline;
+}

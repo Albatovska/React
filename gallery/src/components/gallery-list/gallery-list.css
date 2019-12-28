@@ -1,0 +1,29 @@
+.gallery-container {
+    box-sizing: content-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    width: 80%;
+    margin: 100px auto 30px;
+}
+
+.photo-item {
+    width: 100%;
+    overflow: hidden;
+    max-height: 300px;
+    justify-content: center;
+    box-sizing: border-box;
+    align-self: center;
+    position: relative;
+}
+
+.photo-item .img {
+    width: 100%;
+    filter: grayscale(.75);
+}
+
+.photo-item .img img {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 5%;
+}
