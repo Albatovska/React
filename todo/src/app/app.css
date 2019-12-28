@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.main-container {
+    width: 400px;
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px 5px 1px lightgray;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 3px;
+}
+
+.wrap {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+}
+
+.header {
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .number {
+    font-size: 22px;
+    color: #30d5c8;
+    line-height: 1;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.header .logo {
+    width: 30px;
+}
+
+.list,
+.date {
+    width: 100%;
+    padding: 10px 10px 30px;
+}
+
+.list-title {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #30d5c8;
+    font-weight: bold;
+}
+
+.list-item {
+    width: 100%;
+    display: flex;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.list-item .title {
+    width: 100%;
+    padding: 10px;
+    border-right: 1px solid lightgray;
+}
+
+.list-item .icon {
+    padding: 10px;
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid lightgray;
+    border-left: none;
+}
+
+.list-item .icon:last-child {
+    border: none;
+}
+
+.list-item .important {
+    color: #30d5c8;
+}
+
+.list-item .title.done {
+    text-decoration: line-through;
+}
+
+.footer,
+.search {
+    padding: 20px;
+    border-top: 1px solid lightgray;
+}
+
+.footer .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .form .input-box,
+.search .input-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10px 10px;
+}
+
+.filters .icons {
+    display: flex;
+    margin-left: 10px;
+}
+
+.filters .title {
+    text-transform: uppercase;
+    color: #30d5c8;
+}
+
+.filters .icons .icon {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 3px;
+}
+
+.button {
+    height: 30px;
+    background-color: #30d5c8;
+    min-width: 180px;
+    width: 180px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .25s all ease;
+    white-space: nowrap;
+    outline: none
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.input {
+    border-right-width: 1px;
+    border: 1px solid lightgray;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0px 10px;
+    outline: none;
+    margin: 0 auto;
+    color: rgba(0, 0, 0, .6);
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.icon {
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.icon:hover,
+.icon.active {
+    opacity: 1;
+}
+
+.icon.active {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.icon.delete {
+    color: red;
+}
